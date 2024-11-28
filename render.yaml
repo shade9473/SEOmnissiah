@@ -2,11 +2,15 @@ services:
   - type: web
     name: seomnissiah-api
     env: node
-    buildCommand: npm install
-    startCommand: npm start
+    region: ohio
+    plan: free
+    buildCommand: npm install --production
+    startCommand: node server/server.js
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NODE_VERSION
+        value: 18.17.0
       - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
