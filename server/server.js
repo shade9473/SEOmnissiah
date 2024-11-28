@@ -30,12 +30,20 @@ app.use('/api/credits', require('./routes/creditRoutes'));
 app.use('/api/referral', require('./routes/referralRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+    if (!req.path.startsWith('/api')) {
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    }
+});
+
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/build/index.html'));
-    });
+    // Removed the existing catch-all route to avoid conflicts
 }
 
 // Error handling middleware
