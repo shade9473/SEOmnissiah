@@ -14,30 +14,14 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "server/server.js"
+      "source": "/api/(.*)",
+      "destination": "server/server.js"
     },
     {
-      "src": "^/static/(.*)",
-      "dest": "client/build/static/$1"
-    },
-    {
-      "src": "^/favicon.ico",
-      "dest": "client/build/favicon.ico"
-    },
-    {
-      "src": "^/manifest.json",
-      "dest": "client/build/manifest.json"
-    },
-    {
-      "src": "^/asset-manifest.json",
-      "dest": "client/build/asset-manifest.json"
-    },
-    {
-      "src": ".*",
-      "dest": "client/build/index.html"
+      "source": "/(.*)",
+      "destination": "client/build/index.html"
     }
   ],
   "env": {
