@@ -8,7 +8,10 @@
     {
       "src": "client/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "build" }
+      "config": { 
+        "distDir": "build",
+        "buildCommand": "npm run build"
+      }
     }
   ],
   "routes": [
@@ -17,15 +20,24 @@
       "dest": "server/server.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "client/$1"
+      "src": "^/static/(.*)",
+      "dest": "client/static/$1"
+    },
+    {
+      "src": "^/favicon.ico",
+      "dest": "client/favicon.ico"
+    },
+    {
+      "src": "^/manifest.json",
+      "dest": "client/manifest.json"
+    },
+    {
+      "src": "^/asset-manifest.json",
+      "dest": "client/asset-manifest.json"
+    },
+    {
+      "src": ".*",
+      "dest": "client/index.html"
     }
-  ],
-  "env": {
-    "MONGODB_URI": "@mongodb_uri",
-    "JWT_SECRET": "@jwt_secret",
-    "OPENAI_API_KEY": "@openai_api_key",
-    "SEMRUSH_API_KEY": "@semrush_api_key",
-    "AHREFS_API_KEY": "@ahrefs_api_key"
-  }
+  ]
 }
