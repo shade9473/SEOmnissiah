@@ -1,81 +1,105 @@
-# SEOmnissiah - Advanced SEO Blog Generator
+# KeywordKarnival - SEO Content Generation Platform
 
-An intelligent SEO-focused blog generation platform that combines keyword research, content optimization, and monetization strategies.
+A powerful SEO content generation platform that helps content creators research keywords, generate optimized content, and implement effective monetization strategies.
 
 ## Features
 
-- Advanced keyword research using Edward Stern's "Compact Keywords" methodology
-- AI-powered content generation and optimization
-- SEO performance tracking and analytics
-- Multi-platform monetization integration
-- Content calendar and scheduling
-- Comprehensive SEO audit tools
+### Keyword Research
+- Free keyword research using Google Trends API and search suggestions
+- Competition analysis and search volume metrics
+- Related keyword discovery
+- Keyword opportunity scoring
+
+### Content Generation
+- AI-powered content generation with customizable options
+- Multiple content types (blog posts, articles, product descriptions)
+- Tone and style customization
+- SEO optimization suggestions
+
+### Credit System
+- Free credits for new users
+- Earn credits through referrals
+- Lucky credit system for active users
+- Admin credit gifting capabilities
+
+### User Dashboard
+- Real-time analytics and performance metrics
+- Recent searches history
+- Quick access to core features
+- Credit balance tracking
 
 ## Tech Stack
 
-- Frontend: React
-- Backend: Node.js with Express
-- Database: MongoDB
-- Authentication: JWT
-- API Integrations: OpenAI, SEMrush, Ahrefs (configurable)
+- **Frontend:**
+  - React with Material-UI
+  - React Router for navigation
+  - Axios for API requests
+  - Context API for state management
 
-## Preview and Deployment
+- **Backend:**
+  - Node.js with Express
+  - MongoDB with Mongoose
+  - JWT authentication
+  - Free API integrations (Google Trends, DuckDuckGo)
 
-### Option 1: Vercel Deployment (Recommended)
-1. Install Vercel CLI:
+## Getting Started
+
+1. Clone the repository:
    ```bash
-   npm install -g vercel
+   git clone https://github.com/yourusername/KeywordKarnival.git
+   cd KeywordKarnival
    ```
 
-2. Login to Vercel:
-   ```bash
-   vercel login
-   ```
-
-3. Deploy the application:
-   ```bash
-   vercel
-   ```
-
-4. Set up environment variables in Vercel:
-   - Go to your project settings in Vercel dashboard
-   - Add the following environment variables:
-     - MONGODB_URI
-     - JWT_SECRET
-     - OPENAI_API_KEY
-     - SEMRUSH_API_KEY
-     - AHREFS_API_KEY
-
-5. Access your preview deployment:
-   - Each push will create a unique preview URL
-   - Production deployment will be at your configured domain
-
-### Option 2: Local Development (If needed)
-1. Clone the repository
 2. Install dependencies:
    ```bash
+   # Install server dependencies
    npm install
-   cd client
-   npm install
-   ```
-3. Create a .env file with required environment variables
-4. Start the development server:
-   ```bash
-   npm run dev:full
+
+   # Install client dependencies
+   cd client && npm install
    ```
 
-## Environment Variables
+3. Set up environment variables:
+   - Create `.env` file in the root directory
+   - Copy contents from `.env.example`
+   - Update with your configuration values
 
-Create a .env file in the root directory with the following variables:
+## Deployment
 
-```
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-OPENAI_API_KEY=your_openai_api_key
-SEMRUSH_API_KEY=your_semrush_api_key
-AHREFS_API_KEY=your_ahrefs_api_key
-```
+### Vercel Deployment
+
+1. Fork this repository to your GitHub account
+
+2. Import your repository to Vercel:
+   - Go to [Vercel](https://vercel.com)
+   - Click "Import Project"
+   - Select your repository
+   - Follow the setup instructions
+
+3. Configure environment variables in Vercel:
+   - MONGODB_URI
+   - JWT_SECRET
+   - NODE_ENV
+   - CLIENT_URL
+
+4. Deploy:
+   - Vercel will automatically deploy your application
+   - Each push to main will trigger a new deployment
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to your branch
+5. Create a Pull Request
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the maintainers.
