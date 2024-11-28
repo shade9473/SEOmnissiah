@@ -4,8 +4,8 @@ services:
     env: node
     region: ohio
     plan: free
-    buildCommand: npm install --production
-    startCommand: node server/server.js
+    buildCommand: cd server && npm install --production
+    startCommand: cd server && node server.js
     envVars:
       - key: NODE_ENV
         value: production
