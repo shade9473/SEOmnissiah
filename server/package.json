@@ -22,8 +22,11 @@
     "morgan": "^1.10.0",
     "helmet": "^7.0.0",
     "@remix-run/cloudflare": "^2.5.1",
-    "@cloudflare/workers-types": "^4.20240117.0"
+    "@cloudflare/workers-types": "^4.20240117.0",
+    "hono": "^3.12.6",
+    "@hono/express": "^1.2.0"
   },
+  "type": "module",
   "engines": {
     "node": ">=18.0.0"
   }

@@ -1,14 +1,24 @@
 name = "seomnissiah-api"
-main = "server/server.js"
+main = "server/worker.js"
 compatibility_date = "2024-01-28"
 
 [build]
-command = "npm install"
+command = "cd server && npm install --production"
+cwd = "server"
 watch_dir = "server"
+
+[site]
+bucket = "./server/public"
 
 [env.production]
 name = "seomnissiah-api-prod"
+route = "api.seomnissiah.com/*"
 
 [[kv_namespaces]]
 binding = "SESSIONS"
 id = "sessions"
+
+[build.upload]
+format = "modules"
+main = "./worker.js"
+dir = "server"
